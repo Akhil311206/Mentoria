@@ -1,0 +1,139 @@
+@import 'tailwindcss';
+
+/* Root variables */
+:root {
+  --background: #f8fafc;
+  --foreground: #0f172a;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+@layer base {
+  button, select, a {
+    @apply cursor-pointer;
+  }
+}
+
+/* Body */
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
+    sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* Buttons & inputs reset */
+button, input {
+  font-family: inherit;
+  outline: none;
+}
+
+/* Dashboard Specific Styles */
+.dashboard-container {
+  width: 100%;
+  padding: 40px;
+  background-color: #f8fafc;
+  min-height: 100vh;
+}
+
+.profile-card {
+  background: #ffffff;
+  border-radius: 24px;
+  border: 1px solid #e2e8f0;
+  padding: 48px;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+  width: 100%;
+}
+
+.status-badge {
+  padding: 6px 16px;
+  background-color: #f0fdf4;
+  color: #15803d;
+  border: 1px solid #dcfce7;
+  border-radius: 999px;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.data-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 32px;
+  padding: 40px 0;
+  border-top: 1px solid #f1f5f9;
+  border-bottom: 1px solid #f1f5f9;
+  margin: 40px 0;
+}
+
+.data-label {
+  text-transform: uppercase;
+  font-size: 11px;
+  font-weight: 700;
+  color: #94a3b8;
+  letter-spacing: 0.1em;
+  margin-bottom: 8px;
+}
+
+.data-value {
+  color: #0f172a;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.action-buttons {
+  display: flex;
+  gap: 16px;
+}
+
+.btn-primary {
+  flex: 1;
+  background-color: #2563eb;
+  color: white;
+  padding: 16px;
+  border-radius: 16px;
+  font-weight: 700;
+  transition: all 0.2s;
+  text-align: center;
+}
+
+.btn-secondary {
+  flex: 1;
+  background-color: white;
+  border: 1px solid #e2e8f0;
+  color: #475569;
+  padding: 16px;
+  border-radius: 16px;
+  font-weight: 700;
+  transition: all 0.2s;
+  text-align: center;
+}
+
+/* Force the wrapper to ignore any parent max-widths */
+.full-screen-wrapper {
+  width: 100vw !important;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  padding: 40px 60px; /* Adjust padding for side breathing room */
+  background-color: #f8fafc;
+  min-height: 100vh;
+}
+
+.profile-card-wide {
+  width: 100%;
+  background: white;
+  border: 1px solid #e2e8f0;
+  border-radius: 24px;
+  padding: 60px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+}
